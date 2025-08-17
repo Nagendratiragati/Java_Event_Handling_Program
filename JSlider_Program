@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.event.*;
+import java.awt.event.*;
+public class Jslice extends JFrame {
+public static void main(String [] args)
+  {
+      Jslice obj = new Jslice();
+  }
+
+JSlider js ;
+JLabel label;
+public Jslice()
+{
+  super("JSlice Example");
+   label = new JLabel("the Slice is default position at 0");
+   js = new JSlider(JSlider.HORIZONTAL, 0,100,20);
+  js.setMinorTickSpacing(5);
+  js.setMajorTickSpacing(20);
+  js.setPaintTicks(true);
+  js.setPaintLabels(true);
+ 
+ setLayout(new BorderLayout());
+  add(js,BorderLayout.NORTH);
+  add(label,BorderLayout.CENTER);
+  js.addChangeListener(new Change());
+  
+  setSize(400,200);
+  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  setVisible(true);
+}
+  class Change implements ChangeListener
+  {
+   public void stateChanged(ChangeEvent ce)
+   {
+    label.setText(" the slicer is at" + js.getValue());
+	}
+	}
+  
+  }
