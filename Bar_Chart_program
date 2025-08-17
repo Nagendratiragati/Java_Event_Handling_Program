@@ -1,0 +1,18 @@
+import java.awt.*;
+public class BarCharts extends Frame
+{
+  public static void main(String []args)
+  {
+    BarCharts  bc = new BarCharts();
+	}
+	public BarCharts()
+	{
+	  super(" Students Barcharts");
+	  setSize(300,200);
+	  setVisible(true);
+	  }
+	  public void paint(Graphics g)
+	  {
+	   int array[] ={100,90,80,85,65,70};
+	   int sum =0;
+	   double average;
