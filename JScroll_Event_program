@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java. awt.*;
+import java.awt.event.*;
+public class JscrolBar extends JFrame implements AdjustmentListener
+{
+  JScrollBar scroll = new JScrollBar(JScrollBar.HORIZONTAL);
+  JLabel label = new JLabel(" open  the clickbutton");
+  public JscrolBar()
+  {
+	  super("Scroll Example");
+   setLayout(new BorderLayout());
+   add(label);
+   label.setHorizontalAlignment(JLabel.CENTER);
+   add(scroll,BorderLayout.NORTH);
+   scroll.addAdjustmentListener(this);
+   setSize(300,200);
+   setVisible(true);
+   }
+   public void adjustmentValueChanged(AdjustmentEvent al)
+   {
+    label.setText(" you scroll the scrollBar at position "+ scroll.getValue());
+	}
+	public static void main(String [] args)
+	{
+	 JscrolBar obj = new JscrolBar();
+	 }
+	 }
+   
